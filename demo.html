@@ -21,21 +21,9 @@
 		function init(){			
 			var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',{attribution: 'Tiles &copy; CartoDB'});
 			var map = L.map("map",{layers: [baseLayer], center: [-23.88, -62.75], zoom: 4});
-			var abcCountries = [];
-			var firstLetter;
-			for (curCountry in L.Control.CountrySelect.countries){
-			  firstLetter = curCountry.charAt(0);
-			  switch (firstLetter) {
-			    case 'A':
-			    case 'B':
-			    case 'C':
-			      abcCountries.push(curCountry);
-			      break;
-			    default:
-			    }
-			}
+			var select = L.control.countrySelect({exclude:"French Southern and Antarctic Lands"});
 
-			var select = L.control.countrySelect({include:abcCountries}).addTo(map);
+			select.addTo(map);
 			
 			select.on('change', function(e){
 				if(e.feature === undefined){ //
