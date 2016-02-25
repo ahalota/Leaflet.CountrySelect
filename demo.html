@@ -26,7 +26,7 @@
 			select.addTo(map);
 			
 			select.on('change', function(e){
-				if(e.feature === undefined){ //
+				if (e.feature === undefined){ //Do nothing on title
 					return;
 				}
 				var country = L.geoJson(e.feature);
