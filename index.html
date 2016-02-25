@@ -36,7 +36,7 @@
 
 <p>An optional title for the first entry. Defaults to "Country". Set as an empty string to omit entirely.</p>
 
-<pre><code>var select = L.control.countrySelect({title:'Pick a country!'});
+<pre><code>var select = L.countrySelect({title:'Pick a country!'});
 </code></pre>
 
 <h3>
@@ -44,7 +44,7 @@
 
 <p>An array of country names from list. If defined, ONLY these countries will be loaded into the select menu.</p>
 
-<pre><code>var select = L.control.countrySelect({include:southAmericanCountries}).addTo(map);
+<pre><code>var select = L.countrySelect({include:southAmericanCountries}).addTo(map);
 </code></pre>
 
 <h3>
@@ -52,16 +52,16 @@
 
 <p>An array of country names to ommit from list. Must exactly match the names used by the control.</p>
 
-<pre><code>var select = L.control.countrySelect({exclude:coldCountries}).addTo(map);
+<pre><code>var select = L.countrySelect({exclude:coldCountries}).addTo(map);
 </code></pre>
 
 <h3>
 <a id="additional-parameters" class="anchor" href="#additional-parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Parameters</h3>
 
-<p>The country list is stored in L.Control.CountrySelect.countries as a key/value object with key = Country Name and value = GeoJSON feature.
+<p>The country list is stored in L.CountrySelect.countries as a key/value object with key = Country Name and value = GeoJSON feature.
 You can replace the country list used to load data by setting</p>
 
-<pre><code>L.Control.CountrySelect.countries = {/*new-list-of-countries*/}
+<pre><code>L.CountrySelect.countries = {/*new-list-of-countries*/}
 </code></pre>
 
 <h2>
@@ -69,7 +69,7 @@ You can replace the country list used to load data by setting</p>
 
 <p>This control can listen on a 'change' event. The returned event includes a 'feature' variable, which contains the GeoJSON feature matching the newly selected country. The <a href="demo.html">demo</a>, shown below, adds the selected country as a feature to the map, and removes it once a new entry is selected.</p>
 
-<pre><code>var select = L.control.countrySelect().addTo(map);
+<pre><code>var select = L.countrySelect().addTo(map);
 
 select.on('change', function(e){
     if(e.feature === undefined){ //No action when the first item ("Country") is selected
