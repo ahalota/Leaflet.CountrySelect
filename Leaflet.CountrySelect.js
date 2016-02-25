@@ -1,4 +1,4 @@
-L.Control.CountrySelect = L.Control.extend({
+L.CountrySelect = L.Control.extend({
 	options: {
 		position: 'topright',
 		title: 'Country',
@@ -13,7 +13,7 @@ L.Control.CountrySelect = L.Control.extend({
 			content += '<option>'+this.options.title+'</option>';
 		}
 		
-		var countries = (Array.isArray(this.options.include) && this.options.include.length > 0) ? this.options.include : L.Control.CountrySelect.countries;
+		var countries = (Array.isArray(this.options.include) && this.options.include.length > 0) ? this.options.include : L.CountrySelect.countries;
 
 		for (curCountry in countries){
 			if (this.options.exclude.indexOf(curCountry) == -1){
@@ -40,12 +40,12 @@ L.Control.CountrySelect = L.Control.extend({
 	},
 	_onChange: function(e) {
 		var selectedCountry = this.div.children[0].options[this.div.children[0].selectedIndex].value;
-		e.feature = L.Control.CountrySelect.countries[selectedCountry];
+		e.feature = L.CountrySelect.countries[selectedCountry];
 		this.onChange(e);
 	}
 });
 
-L.Control.CountrySelect.countries = {
+L.CountrySelect.countries = {
 		"Afghanistan" : {
 			"type" : "Feature",
 			"id" : "AFG",
@@ -2028,6 +2028,6 @@ L.Control.CountrySelect.countries = {
 		}
 	};
 
-L.control.countrySelect = function(id,options){
-	return new L.Control.CountrySelect(id,options);
+L.countrySelect = function(id,options){
+	return new L.CountrySelect(id,options);
 };
