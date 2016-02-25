@@ -1,7 +1,7 @@
 # Leaflet.CountrySelect
 Leaflet plugin control to select and load countries from [johan's world.geo.json file](https://github.com/johan/world.geo.json).
 
-## [DEMO]()
+## [DEMO](http://ahalota.github.io/Leaflet.CountrySelect/demo.html)
 
 ## Options
 
@@ -31,7 +31,7 @@ L.Control.CountrySelect.countries = {/*new-list-of-countries*/}
 ```
 
 ## Event Listener: Change
-This control can listen on a 'change' event. The returned event includes a 'feature' variable, which contains the GeoJSON feature matching the newly selected country. The [demo](), shown below, adds the selected country as a feature to the map, and removes it once a new entry is selected.
+This control can listen on a 'change' event. The returned event includes a 'feature' variable, which contains the GeoJSON feature matching the newly selected country. The [demo](http://ahalota.github.io/Leaflet.CountrySelect/demo.html), shown below, adds the selected country as a feature to the map, and removes it once a new entry is selected.
 ```
 var select = L.control.countrySelect().addTo(map);
 
