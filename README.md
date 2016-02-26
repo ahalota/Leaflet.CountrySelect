@@ -23,11 +23,13 @@ An array of country names to ommit from list. Must exactly match the names used 
 var select = L.countrySelect({exclude:coldCountries}).addTo(map);
 ```
 
-### Additional Parameters
-The country list is stored in L.CountrySelect.countries as a key/value object with key = Country Name and value = GeoJSON feature.
-You can replace the country list used to load data by setting
+### Countries
+The country list is stored in L.CountrySelect.countries as a key/value object with key = Country Name and value = GeoJSON feature. This list is used by default, unless a new one is supplied (useful for creating a a dropdown of different regions you supply).
 ```
-L.CountrySelect.countries = {/*new-list-of-countries*/}
+//Version a) Update the main list of countries
+L.CountrySelect.countries = {/*new-list-of-countries*/};
+//Version b) Update the list used by this CountrySelect instance only
+var select = L.countrySelect({countries:medievalCountries}).addTo(map);
 ```
 
 ## Event Listener: Change
