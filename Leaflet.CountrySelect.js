@@ -21,7 +21,7 @@ L.CountrySelect = L.Control.extend({
 		var countries = (Array.isArray(this.options.include) && this.options.include.length > 0) ? this.options.include : this.options.countries;
 
 		var countryKeys = Object.keys(countries).sort();
-		for (i in countryKeys){
+		for (var i in countryKeys){
 			if (this.options.exclude.indexOf(countryKeys[i]) == -1){
 				content+='<option>'+countryKeys[i]+'</option>';
 			}
